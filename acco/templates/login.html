@@ -1,0 +1,19 @@
+{% if form.errors %}
+  <P style="color:orange">ユーザー名とパスワードが一致しません</P>
+{% endif %}
+{% if user.is_authenticated %}
+  <p>既にログインしています。</p>
+{% else %}
+  <form method="post">
+    {% csrf_token %}
+    <h1>ログインページ</h1>
+
+    <label for="id_username">ユーザー名</label>
+    <input type="text" name="username" id="id_username">
+    <label for="id_password">パスワード</label>
+    <input type="password" name="password" id="id_password">
+
+    <input type="submit" value="ログイン">
+
+  </form>
+{% endif %}

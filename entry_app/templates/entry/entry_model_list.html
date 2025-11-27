@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}学習ノートアプリ一覧{% endblock %}
+{% block content %}
+    <h2>～ 投稿一覧 ～</h2>
+    <div class="list-group px-2">
+        <ul>
+            {% for entry in object_list %}
+                <li class="mb-2">
+                    <a href="{% url 'detail_entry' entry.pk %}"
+                       class="list-group-item list-group-item-action w-80">{{entry.t_title}}
+                        <span class="text-muted small">（投稿者：{{entry.user.username}}）</span>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

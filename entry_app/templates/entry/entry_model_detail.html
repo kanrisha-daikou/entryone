@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}詳細ページ{% endblock title %}
+{% block content %}
+    <div class="card mb-1 ms-2" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{ object.t_title }}</h5>
+        <p class="card-text">{{ object.t_text }}</p>
+        <span class="text-muted small">（投稿者：{{object.user.username}}）</span>
+        {% if request.user == object.user %}
+          <a href="{% url 'update_entry' object.pk %}" class="btn btn-dark">修正</a>
+          <a href="{% url 'delete_entry' object.pk %}" class="btn btn-danger">削除</a>
+        {% endif %}
+      </div>
+    </div>
+{% endblock content %}
