@@ -6,7 +6,7 @@ from .views import ListEntryView, DetailEntryView, CreateEntryView, UserView, Up
 urlpatterns = [
     path('hello/', hello_world, name='hello_2'),
     path('world/', world, name='world'),
-    path('entries/', ListEntryView.as_view(), name='list_entry'),
+    path('', ListEntryView.as_view(), name='list_entry'),
     path('ent/<int:pk>/detail/', DetailEntryView.as_view(), name= 'detail_entry'),
     path('entry/create/', CreateEntryView.as_view(), name='create_entry'),
     path('user/<int:user>/entries/', UserView.as_view(), name='user_list'),

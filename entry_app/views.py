@@ -12,7 +12,7 @@ def hello_world(request):
 def world(request):
     return HttpResponse('<h2>World! フロムapp</h2>')
 
-class ListEntryView(LoginRequiredMixin, ListView):
+class ListEntryView(ListView):
     template_name = 'entry/entry_model_list.html'
     model = ModelApp
 
