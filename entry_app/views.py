@@ -16,7 +16,7 @@ class ListEntryView(ListView):
     template_name = 'entry/entry_model_list.html'
     model = ModelApp
 
-class DetailEntryView(LoginRequiredMixin, DetailView):
+class DetailEntryView(DetailView):
     template_name = 'entry/entry_model_detail.html'
     model = ModelApp
 
