@@ -1,4 +1,7 @@
 {% extends 'base.html' %}
+{% block title %}ログイン{% endblock title %}
+
+{% block content %}
 {% if form.errors %}
   <P style="color:orange">ユーザー名とパスワードが一致しません</P>
 {% endif %}
@@ -18,3 +21,4 @@
 
   </form>
 {% endif %}
+{% endblock content %}
