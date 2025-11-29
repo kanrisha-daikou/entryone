@@ -25,11 +25,15 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                data-bs-toggle="dropdown"
-                               aria-expanded="false">その他
+                               aria-expanded="false">アカウント関連
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="{% url 'acco:signup' %}">新規ユーザー登録</a></li>
+                                {% if user.is_authenticated %}
                                 <li><a class="dropdown-item" href="{% url 'acco:logout' %}">ログアウト</a></li>
+                                {% else %}
+                                <li><a class="dropdown-item" href="{% url 'acco:login' %}">ログイン</a></li>
+                                {% endif %}
                             </ul>
                         </li>
                 </ul>
