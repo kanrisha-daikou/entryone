@@ -2,6 +2,9 @@
 {% block title %}学習ノートアプリ一覧{% endblock %}
 {% block content %}
     <h2>～ 投稿一覧 ～</h2>
+    {% if not object_list %}
+        <p>※{{ user.username }}さんの投稿はまだありません。</p>
+    {% endif %}
     <div class="list-group px-2">
         <ul>
             {% for entry in object_list %}
